@@ -14,6 +14,14 @@
 		20761E5A2CE960A10077E90E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E592CE960A10077E90E /* ContentView.swift */; };
 		20761E5C2CE961290077E90E /* PlayTogetherGroupActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E5B2CE961290077E90E /* PlayTogetherGroupActivity.swift */; };
 		20761E5E2CE9645F0077E90E /* SharePlayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E5D2CE9645F0077E90E /* SharePlayMessage.swift */; };
+		20B580F52CE96FDD004506AA /* PaintingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580E72CE96FDD004506AA /* PaintingCanvas.swift */; };
+		20B580F62CE96FDD004506AA /* PaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580F22CE96FDD004506AA /* PaintingView.swift */; };
+		20B580F72CE96FDD004506AA /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580E82CE96FDD004506AA /* Stroke.swift */; };
+		20B580F82CE96FDD004506AA /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580ED2CE96FDD004506AA /* Float.swift */; };
+		20B580F92CE96FDD004506AA /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580EC2CE96FDD004506AA /* Entity.swift */; };
+		20B580FA2CE96FDD004506AA /* ClosureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580EA2CE96FDD004506AA /* ClosureComponent.swift */; };
+		20B580FB2CE96FDD004506AA /* PaintingHandTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580EF2CE96FDD004506AA /* PaintingHandTracking.swift */; };
+		20B580FC2CE96FDD004506AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580F12CE96FDD004506AA /* MainView.swift */; };
 		321A0C13291C02B80042A987 /* DoodleVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A0C12291C02B80042A987 /* DoodleVisionApp.swift */; };
 		321A0C19291C02B90042A987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A0C18291C02B90042A987 /* Assets.xcassets */; };
 		321A0C1C291C02B90042A987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A0C1B291C02B90042A987 /* Preview Assets.xcassets */; };
@@ -56,6 +64,14 @@
 		20761E592CE960A10077E90E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20761E5B2CE961290077E90E /* PlayTogetherGroupActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogetherGroupActivity.swift; sourceTree = "<group>"; };
 		20761E5D2CE9645F0077E90E /* SharePlayMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlayMessage.swift; sourceTree = "<group>"; };
+		20B580E72CE96FDD004506AA /* PaintingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingCanvas.swift; sourceTree = "<group>"; };
+		20B580E82CE96FDD004506AA /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
+		20B580EA2CE96FDD004506AA /* ClosureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureComponent.swift; sourceTree = "<group>"; };
+		20B580EC2CE96FDD004506AA /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		20B580ED2CE96FDD004506AA /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		20B580EF2CE96FDD004506AA /* PaintingHandTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingHandTracking.swift; sourceTree = "<group>"; };
+		20B580F12CE96FDD004506AA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		20B580F22CE96FDD004506AA /* PaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingView.swift; sourceTree = "<group>"; };
 		321A0C0B291C02B80042A987 /* DoodleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321A0C12291C02B80042A987 /* DoodleVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleVisionApp.swift; sourceTree = "<group>"; };
 		321A0C18291C02B90042A987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +146,61 @@
 			path = "New Views";
 			sourceTree = "<group>";
 		};
+		20B580E92CE96FDD004506AA /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				20B580E72CE96FDD004506AA /* PaintingCanvas.swift */,
+				20B580E82CE96FDD004506AA /* Stroke.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		20B580EB2CE96FDD004506AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				20B580EA2CE96FDD004506AA /* ClosureComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		20B580EE2CE96FDD004506AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20B580EC2CE96FDD004506AA /* Entity.swift */,
+				20B580ED2CE96FDD004506AA /* Float.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20B580F02CE96FDD004506AA /* Trackers */ = {
+			isa = PBXGroup;
+			children = (
+				20B580EF2CE96FDD004506AA /* PaintingHandTracking.swift */,
+			);
+			path = Trackers;
+			sourceTree = "<group>";
+		};
+		20B580F32CE96FDD004506AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20B580F12CE96FDD004506AA /* MainView.swift */,
+				20B580F22CE96FDD004506AA /* PaintingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20B580F42CE96FDD004506AA /* Painting */ = {
+			isa = PBXGroup;
+			children = (
+				20B580E92CE96FDD004506AA /* Canvas */,
+				20B580EB2CE96FDD004506AA /* Components */,
+				20B580EE2CE96FDD004506AA /* Extensions */,
+				20B580F02CE96FDD004506AA /* Trackers */,
+				20B580F32CE96FDD004506AA /* Views */,
+			);
+			path = Painting;
+			sourceTree = "<group>";
+		};
 		321A0C02291C02B70042A987 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +227,7 @@
 				20761E4D2CE94FA00077E90E /* Data & State */,
 				322D5A842A057FBB003A32F3 /* Sounds */,
 				32BD3B6B299C2790005798DF /* USDZs */,
+				20B580F42CE96FDD004506AA /* Painting */,
 				324F3043298AC8B900200F22 /* Views */,
 				32791FAF2A30CEF3000290A2 /* Gameplay */,
 				321A0C12291C02B80042A987 /* DoodleVisionApp.swift */,
@@ -356,6 +428,14 @@
 				32372A632991920F00F10755 /* DoodleVision.swift in Sources */,
 				20761E5C2CE961290077E90E /* PlayTogetherGroupActivity.swift in Sources */,
 				32BD3B68299C26E6005798DF /* GlobalEntities.swift in Sources */,
+				20B580F52CE96FDD004506AA /* PaintingCanvas.swift in Sources */,
+				20B580F62CE96FDD004506AA /* PaintingView.swift in Sources */,
+				20B580F72CE96FDD004506AA /* Stroke.swift in Sources */,
+				20B580F82CE96FDD004506AA /* Float.swift in Sources */,
+				20B580F92CE96FDD004506AA /* Entity.swift in Sources */,
+				20B580FA2CE96FDD004506AA /* ClosureComponent.swift in Sources */,
+				20B580FB2CE96FDD004506AA /* PaintingHandTracking.swift in Sources */,
+				20B580FC2CE96FDD004506AA /* MainView.swift in Sources */,
 				321C576829788A1900DBBE9E /* GameModel.swift in Sources */,
 				32791FB12A30CF24000290A2 /* BeamCollisions.swift in Sources */,
 			);

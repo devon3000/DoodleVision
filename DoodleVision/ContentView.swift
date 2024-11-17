@@ -16,6 +16,8 @@ import Combine
 struct ContentView: View {
     @ObservedObject var viewModel: ContentViewModel
     
+    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    
     var body: some View {
         VStack {
             RealityView { content in
@@ -35,6 +37,11 @@ struct ContentView: View {
             }
             .task {
                 viewModel.registerGroupActivity()
+            }
+            .onAppear {
+                Task {
+                    await openImmersiveSpace(id: "PaintingScene")
+                }
             }
             
             VStack {

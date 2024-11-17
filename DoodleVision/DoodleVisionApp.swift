@@ -12,7 +12,7 @@ import RealityKit
 @main
 struct DoodleVisionApp: App {
     // @State private var gameModel = GameModel()
-    // @State private var immersionState: ImmersionStyle = .mixed
+    @State private var immersionState: ImmersionStyle = .mixed
     // private var newContentViewModel = ContentViewModel()
     
     init() {
@@ -25,7 +25,7 @@ struct DoodleVisionApp: App {
             ContentView(viewModel: ContentViewModel())
         }
         .windowStyle(.plain)
-            
+        
         /*
         WindowGroup("DoodleVision", id: "doodleVisionApp") {
             Intro()
