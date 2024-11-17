@@ -6,20 +6,59 @@ The play screen for single player.
 */
 
 import SwiftUI
+import RealityKit
+import ARKit
 
 struct SoloPlay: View {
     //@Environment(GameModel.self) var gameModel
     //@Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @State var canvas = PaintingCanvas()
+
+    let colors: [(String, Color)] = [
+        ("Red", .red),
+        ("Green", .green),
+        ("Blue", .blue),
+        ("Yellow", .yellow),
+        ("Purple", .purple)
+    ]
+    
     var body: some View {
         // Display a line of text and
         // open a new immersive space environment.
-        Text("Painting Example")
+        Text("Doodle Vision")
             .onAppear {
                 Task {
                     await openImmersiveSpace(id: "PaintingScene")
                 }
             }
+        // Color selection buttons
+        HStack {
+            ForEach(colors, id: \.0) { color in
+                Button(action: {
+                    // Update the canvas's current color.
+                    canvas.currentColor = SimpleMaterial(color: UIColor(color.1), roughness: 1.0, isMetallic: false)
+                }) {
+                    Circle()
+                        .fill(color.1)
+                        .frame(width: 30, height: 30)
+                }
+            }
+        }
+        .padding()
+
+        // Clear Paint button
+        Button(action: {
+            canvas.clearCanvas()
+        }) {
+            Text("Clear Paint")
+                .font(.headline)
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+        }
+        .padding()
 //        HStack(alignment: .top) {
 //            VStack(spacing: 0) {
 //                let progress = Float(gameModel.timeLeft) / Float(GameModel.gameTime)

@@ -15,6 +15,12 @@ class PaintingCanvas {
 
     /// The stroke that a person creates.
     var currentStroke: Stroke?
+    
+    /// A collection of all strokes created.
+    var allStrokes: [Stroke] = []
+
+    /// The currently selected stroke color.
+    var currentColor: SimpleMaterial = SimpleMaterial(color: .white, roughness: 1.0, isMetallic: false)
 
     /// The distance for the box that extends in the positive direction.
     let big: Float = 1E2
@@ -60,6 +66,9 @@ class PaintingCanvas {
 
             // Add the stroke to the root.
             root.addChild(currentStroke!.entity)
+            
+            // Add the stroke to the collection of all strokes.
+            allStrokes.append(currentStroke!)
         }
 
         // Check whether the length between the current hand position and the previous point meets the threshold.
@@ -72,6 +81,8 @@ class PaintingCanvas {
 
         // Update the current stroke mesh.
         currentStroke?.updateMesh()
+        
+        currentStroke?.entity.components.set(ModelComponent(mesh: currentStroke!.entity.model?.mesh ?? MeshResource.generateSphere(radius: 0.01), materials: [currentColor]))
     }
 
     /// Clear the stroke when the drag gesture ends.
@@ -83,5 +94,14 @@ class PaintingCanvas {
             // Clear the current stroke.
             currentStroke = nil
         }
+    }
+    
+    /// Clear all strokes from the canvas.
+    func clearCanvas() {
+        // Remove all strokes from the root entity and the collection.
+        for stroke in allStrokes {
+            root.removeChild(stroke.entity)
+        }
+        allStrokes.removeAll()
     }
 }
