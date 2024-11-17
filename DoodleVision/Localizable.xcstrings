@@ -1271,6 +1271,9 @@
         }
       }
     },
+    "Enlarge Sphere" : {
+
+    },
     "Great job!" : {
       "comment" : "Praise for the player.",
       "localizations" : {
@@ -1409,9 +1412,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "Hiding beam" : {
       "localizations" : {
@@ -1868,6 +1868,9 @@
     },
     "See how well drawing immersive space game." : {
       "comment" : "Subtitle text for the SharePlay join dialog."
+    },
+    "SharePlay" : {
+
     },
     "Stop music" : {
       "comment" : "Button to stop music",

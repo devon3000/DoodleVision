@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1F8249602A16EEDA00C2F5D3 /* Cloud.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1F82495F2A16EEDA00C2F5D3 /* Cloud.usdz */; };
 		20761E502CE950C70077E90E /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E4F2CE950C70077E90E /* Intro.swift */; };
+		20761E542CE95C250077E90E /* NewStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E532CE95C250077E90E /* NewStart.swift */; };
+		20761E582CE95F4C0077E90E /* TestNewSharedSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E572CE95F4C0077E90E /* TestNewSharedSpace.swift */; };
+		20761E5A2CE960A10077E90E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E592CE960A10077E90E /* ContentView.swift */; };
+		20761E5C2CE961290077E90E /* PlayTogetherGroupActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E5B2CE961290077E90E /* PlayTogetherGroupActivity.swift */; };
+		20761E5E2CE9645F0077E90E /* SharePlayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E5D2CE9645F0077E90E /* SharePlayMessage.swift */; };
 		321A0C13291C02B80042A987 /* DoodleVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A0C12291C02B80042A987 /* DoodleVisionApp.swift */; };
 		321A0C19291C02B90042A987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A0C18291C02B90042A987 /* Assets.xcassets */; };
 		321A0C1C291C02B90042A987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A0C1B291C02B90042A987 /* Preview Assets.xcassets */; };
@@ -46,6 +51,11 @@
 /* Begin PBXFileReference section */
 		1F82495F2A16EEDA00C2F5D3 /* Cloud.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Cloud.usdz; sourceTree = "<group>"; };
 		20761E4F2CE950C70077E90E /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		20761E532CE95C250077E90E /* NewStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStart.swift; sourceTree = "<group>"; };
+		20761E572CE95F4C0077E90E /* TestNewSharedSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNewSharedSpace.swift; sourceTree = "<group>"; };
+		20761E592CE960A10077E90E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20761E5B2CE961290077E90E /* PlayTogetherGroupActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogetherGroupActivity.swift; sourceTree = "<group>"; };
+		20761E5D2CE9645F0077E90E /* SharePlayMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlayMessage.swift; sourceTree = "<group>"; };
 		321A0C0B291C02B80042A987 /* DoodleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321A0C12291C02B80042A987 /* DoodleVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleVisionApp.swift; sourceTree = "<group>"; };
 		321A0C18291C02B90042A987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				20761E4F2CE950C70077E90E /* Intro.swift */,
+				20761E532CE95C250077E90E /* NewStart.swift */,
 			);
 			path = "New Views";
 			sourceTree = "<group>";
@@ -149,6 +160,10 @@
 				32791FAF2A30CEF3000290A2 /* Gameplay */,
 				321A0C12291C02B80042A987 /* DoodleVisionApp.swift */,
 				32D0FA0E291EE85800FF07D8 /* DoodleVisionSpace.swift */,
+				20761E572CE95F4C0077E90E /* TestNewSharedSpace.swift */,
+				20761E592CE960A10077E90E /* ContentView.swift */,
+				20761E5D2CE9645F0077E90E /* SharePlayMessage.swift */,
+				20761E5B2CE961290077E90E /* PlayTogetherGroupActivity.swift */,
 				32BD3B67299C26E6005798DF /* GlobalEntities.swift */,
 				321C576729788A1900DBBE9E /* GameModel.swift */,
 				32BD3B69299C2729005798DF /* Extensions.swift */,
@@ -320,8 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20761E5E2CE9645F0077E90E /* SharePlayMessage.swift in Sources */,
 				32665A97299AB02200EBA549 /* Lobby.swift in Sources */,
 				321A0C13291C02B80042A987 /* DoodleVisionApp.swift in Sources */,
+				20761E5A2CE960A10077E90E /* ContentView.swift in Sources */,
 				20761E502CE950C70077E90E /* Intro.swift in Sources */,
 				322C5443291D892800C32983 /* HeartGestureModel.swift in Sources */,
 				32372A652991951F00F10755 /* Players.swift in Sources */,
@@ -332,9 +349,12 @@
 				324EA74B297B2286005A6B3B /* Multiplayer.swift in Sources */,
 				32D0FA0F291EE85800FF07D8 /* DoodleVisionSpace.swift in Sources */,
 				324F3049298AEAF800200F22 /* SoloScore.swift in Sources */,
+				20761E582CE95F4C0077E90E /* TestNewSharedSpace.swift in Sources */,
 				32BD3B6A299C2729005798DF /* Extensions.swift in Sources */,
+				20761E542CE95C250077E90E /* NewStart.swift in Sources */,
 				324F3045298ACB0B00200F22 /* Start.swift in Sources */,
 				32372A632991920F00F10755 /* DoodleVision.swift in Sources */,
+				20761E5C2CE961290077E90E /* PlayTogetherGroupActivity.swift in Sources */,
 				32BD3B68299C26E6005798DF /* GlobalEntities.swift in Sources */,
 				321C576829788A1900DBBE9E /* GameModel.swift in Sources */,
 				32791FB12A30CF24000290A2 /* BeamCollisions.swift in Sources */,
