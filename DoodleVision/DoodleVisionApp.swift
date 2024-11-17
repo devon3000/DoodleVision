@@ -11,9 +11,12 @@ import RealityKit
 /// The structure of the Happy Beam app: a main window and a Full Space for gameplay.
 @main
 struct DoodleVisionApp: App {
-    // @State private var gameModel = GameModel()
+    @State private var gameModel = GameModel()
     @State private var immersionState: ImmersionStyle = .mixed
-    // private var newContentViewModel = ContentViewModel()
+    @State private var fullAppState = FullAppState()
+    
+    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @Environment(\.scenePhase) private var scenePhase
     
     init() {
         
@@ -22,9 +25,23 @@ struct DoodleVisionApp: App {
     var body: some SwiftUI.Scene {
         
         WindowGroup("DoodleVision", id: "doodleVisionApp") {
-            ContentView(viewModel: ContentViewModel())
+            ContentView(viewModel: fullAppState.contentViewModel)
+                .environment(fullAppState)
         }
         .windowStyle(.plain)
+        .onChange(of: scenePhase) { _, newScenePhase in
+            Task {
+                if newScenePhase == .active {
+                    await openImmersiveSpace(id: "ImmersiveSpace")
+                }
+            }
+        
+        ImmersiveSpace(id: "PaintingScene") {
+            DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
+                .environment(gameModel)
+                .environment(fullAppState)
+        }
+        .immersionStyle(selection: $immersionState, in: .mixed)
         
         /*
         WindowGroup("DoodleVision", id: "doodleVisionApp") {

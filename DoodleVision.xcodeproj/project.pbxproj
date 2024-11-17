@@ -22,6 +22,7 @@
 		20B580FA2CE96FDD004506AA /* ClosureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580EA2CE96FDD004506AA /* ClosureComponent.swift */; };
 		20B580FB2CE96FDD004506AA /* PaintingHandTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580EF2CE96FDD004506AA /* PaintingHandTracking.swift */; };
 		20B580FC2CE96FDD004506AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580F12CE96FDD004506AA /* MainView.swift */; };
+		20B580FE2CE9767B004506AA /* FullAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B580FD2CE9767B004506AA /* FullAppState.swift */; };
 		321A0C13291C02B80042A987 /* DoodleVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A0C12291C02B80042A987 /* DoodleVisionApp.swift */; };
 		321A0C19291C02B90042A987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A0C18291C02B90042A987 /* Assets.xcassets */; };
 		321A0C1C291C02B90042A987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A0C1B291C02B90042A987 /* Preview Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		20B580EF2CE96FDD004506AA /* PaintingHandTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingHandTracking.swift; sourceTree = "<group>"; };
 		20B580F12CE96FDD004506AA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		20B580F22CE96FDD004506AA /* PaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingView.swift; sourceTree = "<group>"; };
+		20B580FD2CE9767B004506AA /* FullAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAppState.swift; sourceTree = "<group>"; };
 		321A0C0B291C02B80042A987 /* DoodleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321A0C12291C02B80042A987 /* DoodleVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleVisionApp.swift; sourceTree = "<group>"; };
 		321A0C18291C02B90042A987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		20761E4D2CE94FA00077E90E /* Data & State */ = {
 			isa = PBXGroup;
 			children = (
+				20B580FD2CE9767B004506AA /* FullAppState.swift */,
 			);
 			path = "Data & State";
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			files = (
 				20761E5E2CE9645F0077E90E /* SharePlayMessage.swift in Sources */,
 				32665A97299AB02200EBA549 /* Lobby.swift in Sources */,
+				20B580FE2CE9767B004506AA /* FullAppState.swift in Sources */,
 				321A0C13291C02B80042A987 /* DoodleVisionApp.swift in Sources */,
 				20761E5A2CE960A10077E90E /* ContentView.swift in Sources */,
 				20761E502CE950C70077E90E /* Intro.swift in Sources */,

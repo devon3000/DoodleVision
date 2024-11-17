@@ -66,9 +66,36 @@ class ContentViewModel: ObservableObject {
     var sharePlayMessenger: GroupSessionMessenger?
     var sharePlaySession: GroupSession<PlayTogetherGroupActivity>?
     
+    var fullAppState: FullAppState?
+    
     func toggleEnlarge() {
         enlarged.toggle()
         sendEnlargeMessage(EnlargeMessage(enlarged: enlarged))
+    }
+    
+    func addNetworkedPointAtPos(_ newPose: Pose3D) {
+        
+        var addPointMessage = AddPointMessage(pose: newPose)
+        
+        Task {
+            do {
+                try await sharePlayMessenger?.send(addPointMessage)
+            } catch {
+                print("addPointMessage failed \(error)")
+            }
+        }
+    }
+    
+    func finishStroke() {
+        var finishStrokeMessage = FinishStrokeMessage()
+        
+        Task {
+            do {
+                try await sharePlayMessenger?.send(finishStrokeMessage)
+            } catch {
+                print("addPointMessage failed \(error)")
+            }
+        }
     }
     
     func sendEnlargeMessage(_ message: EnlargeMessage) {
@@ -124,6 +151,16 @@ class ContentViewModel: ObservableObject {
                     Task {
                         for await (message, _) in messenger.messages(of: EnlargeMessage.self) {
                             handle(message)
+                        }
+                        
+                        // Add Point
+                        for await (message, _) in messenger.messages(of: AddPointMessage.self) {
+                            handleAddPointMessage(message)
+                        }
+                        
+                        // Finish Stroke
+                        for await (message, _) in messenger.messages(of: FinishStrokeMessage.self) {
+                            handleFinishStrokeMessage(message)
                         }
                     }
                 )
@@ -185,6 +222,26 @@ class ContentViewModel: ObservableObject {
         Task {
             @MainActor in
             self.enlarged = message.enlarged
+        }
+    }
+    
+    func handleAddPointMessage(_ message: AddPointMessage) {
+        Task {
+            @MainActor in
+            
+            var transformPoint = Transform(matrix: simd_float4x4(message.pose))
+            
+            print("Try handle add point message.")
+            fullAppState?.canvas.addPoint(transformPoint.translation)
+        }
+    }
+    
+    func handleFinishStrokeMessage(_ message: FinishStrokeMessage) {
+        Task {
+            @MainActor in
+            
+            print("Try handle finish stroke message.")
+            fullAppState?.canvas.finishStroke()
         }
     }
     

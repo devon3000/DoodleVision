@@ -33,10 +33,6 @@ struct BeamMessage: Codable {
     let pose: Pose3D
 }
 
-struct PaintMessage: Codable {
-    let pose: Pose3D
-}
-
 /// A message that indicates another player cheered up a particular cloud.
 struct ScoreMessage: Codable {
     let cloudID: Int

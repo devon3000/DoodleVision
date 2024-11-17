@@ -16,6 +16,9 @@ import ARKit
 
 /// The Full Space that displays when someone plays the game.
 struct DoodleVisionSpace: View {
+    
+    @Environment(FullAppState.self) private var fullAppState
+    
     @ObservedObject var gestureModel: HeartGestureModel
     @Environment(GameModel.self) var gameModel
     
@@ -29,7 +32,7 @@ struct DoodleVisionSpace: View {
     @State private var activationSubscription: EventSubscription?
     
     /// The instance of the `PaintingCanvas` class to handle painting operation.
-    @State var canvas = PaintingCanvas()
+    // @State var canvas = PaintingCanvas()
 
     /// The position of the index finger on the last pinch gesture.
     @State var lastIndexPose: SIMD3<Float>?
@@ -93,7 +96,7 @@ struct DoodleVisionSpace: View {
 //            }
             
             
-            let root = canvas.root
+            let root = fullAppState.canvas.root
 
             // Add the canvas to the reality view.
             content.add(root)
@@ -189,7 +192,18 @@ struct DoodleVisionSpace: View {
             .onChanged { @MainActor drag in
                 if let pos = lastIndexPose {
                     // Add the current position to the canvas.
-                    canvas.addPoint(pos)
+                    fullAppState.canvas.addPoint(pos)
+                    
+                    // SHAREPLAY
+                    if fullAppState.contentViewModel.sharePlayEnabled {
+                        
+                        let entity = drag.entity
+                        
+                        var newPose3D = Pose3D(entity.transform.matrix)!
+                        
+                        fullAppState.contentViewModel.addNetworkedPointAtPos(newPose3D)
+                        
+                    }
                 }
 //                let entity = drag.entity
 //                guard entity[parentMatching: "Heart Projector"] != nil else { return }
@@ -236,8 +250,15 @@ struct DoodleVisionSpace: View {
 //                    globalHeart?.children[0].transform.rotation = .init()
 //                }
 //                endBlasterBeam()
-                canvas.finishStroke() // End the current stroke when the drag gesture ends.
+                fullAppState.canvas.finishStroke() // End the current stroke when the drag gesture ends.
 
+                // SHAREPLAY
+                if fullAppState.contentViewModel.sharePlayEnabled {
+                    
+                    fullAppState.contentViewModel.finishStroke()
+                    
+                }
+                
             }
         )
         .task {
