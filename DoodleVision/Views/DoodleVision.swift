@@ -159,7 +159,7 @@ struct DoodleVision: View {
                                 }
                                 
                                 Task {
-                                    multiBeamMap[potentialNewPlayer.name] = await initialBeam(for: potentialNewPlayer)
+                                    multiPaintMap[potentialNewPlayer.name] = await initialBeam(for: potentialNewPlayer)
                                 }
                             }
                         }
@@ -209,13 +209,21 @@ struct DoodleVision: View {
                 
                 // Handle the display of multiple beams in multiplayer.
                 Task {
-                    for await (message, sender) in sessionInfo!.messenger!.messages(of: BeamMessage.self) {
-                        guard let multiplayerBeam = multiBeamMap[sender.source.id.asPlayerName] else {
+//                    for await (message, sender) in sessionInfo!.messenger!.messages(of: BeamMessage.self) {
+//                        guard let multiplayerBeam = multiBeamMap[sender.source.id.asPlayerName] else {
+//                            print("Got beam message for a beam that doesn't exist:", sender.source.id.asPlayerName)
+//                            continue
+//                        }
+//                        
+//                        multiplayerBeam.transform = Transform(matrix: simd_float4x4(message.pose))
+//                    }
+                    for await (message, sender) in sessionInfo!.messenger!.messages(of: PaintMessage.self) {
+                        guard let multiplayerPaint = multiPaintMap[sender.source.id.asPlayerName] else {
                             print("Got beam message for a beam that doesn't exist:", sender.source.id.asPlayerName)
                             continue
                         }
                         
-                        multiplayerBeam.transform = Transform(matrix: simd_float4x4(message.pose))
+                        multiplayerPaint.transform = Transform(matrix: simd_float4x4(message.pose))
                     }
                 }
             }

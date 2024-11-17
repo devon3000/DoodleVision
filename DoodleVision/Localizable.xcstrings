@@ -1550,6 +1550,9 @@
         }
       }
     },
+    "Painting Example" : {
+
+    },
     "Pause" : {
       "comment" : "Button to pause the game",
       "localizations" : {
@@ -1798,6 +1801,7 @@
     },
     "score" : {
       "comment" : "A string that indicates the number immediately above is the player's current score in the game.",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
