@@ -37,8 +37,8 @@
         },
         "zh_CN" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "欢乐光束"
+            "state" : "translated",
+            "value" : "涂涂视界"
           }
         }
       }
@@ -91,37 +91,37 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Erfasse deine Hände, damit eine Herzgeste erkannt werden kann."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Track your hands to detect a heart gesture."
+            "value" : "Hands are used to draw on a shared whiteboard."
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Suivez vos mains pour détecter un geste en forme de cœur."
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "手をトラッキングしてハートのジェスチャを検出します。"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "하트 제스처를 감지하기 위해 손을 추적합니다."
           }
         },
         "zh_CN" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "跟踪手部检测比心手势。"
           }
         }
