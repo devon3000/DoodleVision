@@ -1166,6 +1166,9 @@
         }
       }
     },
+    "Clear Paint" : {
+
+    },
     "Cloud" : {
       "localizations" : {
         "de" : {
@@ -1798,6 +1801,9 @@
           }
         }
       }
+    },
+    "Ready Start!" : {
+
     },
     "score" : {
       "comment" : "A string that indicates the number immediately above is the player's current score in the game.",

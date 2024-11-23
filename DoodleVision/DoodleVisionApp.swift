@@ -32,9 +32,10 @@ struct DoodleVisionApp: App {
         .onChange(of: scenePhase) { _, newScenePhase in
             Task {
                 if newScenePhase == .active {
-                    await openImmersiveSpace(id: "ImmersiveSpace")
+                    await openImmersiveSpace(id: "PaintingScene")
                 }
             }
+        }
         
         ImmersiveSpace(id: "PaintingScene") {
             DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)

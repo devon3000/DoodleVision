@@ -152,12 +152,20 @@ class ContentViewModel: ObservableObject {
                         for await (message, _) in messenger.messages(of: EnlargeMessage.self) {
                             handle(message)
                         }
-                        
+                    }
+                )
+                
+                self.tasks.insert(
+                    Task {
                         // Add Point
                         for await (message, _) in messenger.messages(of: AddPointMessage.self) {
                             handleAddPointMessage(message)
                         }
-                        
+                    }
+                )
+                
+                self.tasks.insert(
+                    Task {
                         // Finish Stroke
                         for await (message, _) in messenger.messages(of: FinishStrokeMessage.self) {
                             handleFinishStrokeMessage(message)
@@ -198,7 +206,7 @@ class ContentViewModel: ObservableObject {
                         Task.detached { @MainActor in
                             for await immersionStyle in systemCoordinator.groupImmersionStyle {
                                 if let immersionStyle {
-//                                 await openImmersiveSpace(id: "ImmersiveSpace")
+                                 // await openImmersiveSpace(id: "PaintingScene")
                                 } else {
 //                                 await dismissImmersiveSpace()
                                 }
