@@ -31,7 +31,7 @@ struct TestNewSharedSpace: View {
 
            VStack {
                Button(action: viewModel.toggleEnlarge, label: {
-                   Text("Enlarge Sphere")
+                   Text("Ready Start!")
                }).buttonStyle(.bordered).tint(viewModel.enlarged ? .green : .gray)
            }.padding().glassBackgroundEffect()
 
