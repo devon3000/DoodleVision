@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CA9F432CF156FF00BB8327 /* DoodleVisionAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 14CA9F422CF156FF00BB8327 /* DoodleVisionAssets */; };
 		1F8249602A16EEDA00C2F5D3 /* Cloud.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1F82495F2A16EEDA00C2F5D3 /* Cloud.usdz */; };
 		20761E502CE950C70077E90E /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E4F2CE950C70077E90E /* Intro.swift */; };
 		20761E542CE95C250077E90E /* NewStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20761E532CE95C250077E90E /* NewStart.swift */; };
@@ -117,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CA9F432CF156FF00BB8327 /* DoodleVisionAssets in Frameworks */,
 				321C68312A2FEF1C00721BA7 /* DoodleVisionAssets in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +338,7 @@
 			name = DoodleVision;
 			packageProductDependencies = (
 				321C68302A2FEF1C00721BA7 /* DoodleVisionAssets */,
+				14CA9F422CF156FF00BB8327 /* DoodleVisionAssets */,
 			);
 			productName = DoodleVisionX;
 			productReference = 321A0C0B291C02B80042A987 /* DoodleVision.app */;
@@ -371,6 +374,9 @@
 				ja,
 			);
 			mainGroup = 321A0C02291C02B70042A987;
+			packageReferences = (
+				14CA9F412CF156FF00BB8327 /* XCLocalSwiftPackageReference "Packages/DoodleVisionAssets" */,
+			);
 			productRefGroup = 321A0C0C291C02B80042A987 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -663,7 +669,18 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		14CA9F412CF156FF00BB8327 /* XCLocalSwiftPackageReference "Packages/DoodleVisionAssets" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DoodleVisionAssets;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		14CA9F422CF156FF00BB8327 /* DoodleVisionAssets */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DoodleVisionAssets;
+		};
 		321C68302A2FEF1C00721BA7 /* DoodleVisionAssets */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DoodleVisionAssets;

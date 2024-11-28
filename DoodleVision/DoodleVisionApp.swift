@@ -8,7 +8,7 @@ The app structure.
 import SwiftUI
 import RealityKit
 
-/// The structure of the Happy Beam app: a main window and a Full Space for gameplay.
+/// The structure of the DoodleVision app: a main window and a Full Space for gameplay.
 @main
 struct DoodleVisionApp: App {
     @State private var gameModel = GameModel()
@@ -35,62 +35,63 @@ struct DoodleVisionApp: App {
                     await openImmersiveSpace(id: "ImmersiveSpace")
                 }
             }
-        
-        ImmersiveSpace(id: "PaintingScene") {
-            DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
-                .environment(gameModel)
-                .environment(fullAppState)
-        }
-        .immersionStyle(selection: $immersionState, in: .mixed)
-        
-        /*
-        WindowGroup("DoodleVision", id: "doodleVisionApp") {
-            Intro()
-                .onAppear {
-                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-                        return
-                    }
-                        
-                    windowScene.requestGeometryUpdate(.Vision(resizingRestrictions: UIWindowScene.ResizingRestrictions.none))
-                }
-        }
-        .windowStyle(.plain)
-        
-        ImmersiveSpace(id: "doodleVision") {
             
-            TestNewSharedSpace(viewModel: newContentViewModel)
+            ImmersiveSpace(id: "PaintingScene") {
+                DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
+                    .environment(gameModel)
+                    .environment(fullAppState)
+            }
+            .immersionStyle(selection: $immersionState, in: .mixed)
             
             /*
-            DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
-                .environment(gameModel)
+             WindowGroup("DoodleVision", id: "doodleVisionApp") {
+             Intro()
+             .onAppear {
+             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+             return
+             }
+             
+             windowScene.requestGeometryUpdate(.Vision(resizingRestrictions: UIWindowScene.ResizingRestrictions.none))
+             }
+             }
+             .windowStyle(.plain)
+             
+             ImmersiveSpace(id: "doodleVision") {
+             
+             TestNewSharedSpace(viewModel: newContentViewModel)
+             
+             /*
+              DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
+              .environment(gameModel)
+              */
+             }
+             .immersionStyle(selection: $immersionState, in: .mixed)
              */
         }
-        .immersionStyle(selection: $immersionState, in: .mixed)
+        
+        /*
+         var body: some SwiftUI.Scene {
+         WindowGroup("DoodleVision", id: "doodleVisionApp") {
+         DoodleVision()
+         .environment(gameModel)
+         .onAppear {
+         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+         return
+         }
+         
+         windowScene.requestGeometryUpdate(.Vision(resizingRestrictions: UIWindowScene.ResizingRestrictions.none))
+         }
+         }
+         .windowStyle(.plain)
+         
+         ImmersiveSpace(id: "doodleVision") {
+         DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
+         .environment(gameModel)
+         }
+         .immersionStyle(selection: $immersionState, in: .mixed)
+         }
          */
     }
-    
-    /*
-    var body: some SwiftUI.Scene {
-        WindowGroup("DoodleVision", id: "doodleVisionApp") {
-            DoodleVision()
-                .environment(gameModel)
-                .onAppear {
-                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-                        return
-                    }
-                        
-                    windowScene.requestGeometryUpdate(.Vision(resizingRestrictions: UIWindowScene.ResizingRestrictions.none))
-                }
-        }
-        .windowStyle(.plain)
-        
-        ImmersiveSpace(id: "doodleVision") {
-            DoodleVisionSpace(gestureModel: HeartGestureModelContainer.heartGestureModel)
-                .environment(gameModel)
-        }
-        .immersionStyle(selection: $immersionState, in: .mixed)
-    }
-     */
 }
 
 @MainActor
